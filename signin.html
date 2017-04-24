@@ -1,73 +1,91 @@
 <html>
 
 <head>
-<title>5730211015</title>
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <title>5730211015</title>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-light_blue.min.css" /> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style media="screen">
         .demo-layout-transparent .mdl-layout__header,
         .demo-layout-transparent .mdl-layout__drawer-button {
             color: white;
         }
+
+        .font {
+            margin: 5px 0;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 100;
+            color: #121212;
+        }
+
+        body {
+            background-image: url("images/hero_1.jpg");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
     </style>
 </head>
 
 <body>
-  <div class="mdl-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">App</span>
-        <div class="mdl-layout-spacer"></div>
-      </div>
-    </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">App</span>
-    </div>
-<div class="mdl-grid">
-        <main class="mdl-layout__content">
+    <div class="mdl-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">App</span>
+                <div class="mdl-layout-spacer"></div>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">App</span>
+        </div>
+        <div class="mdl-grid">
+            <main class="mdl-layout__content">
                 <form action="#">
-                  <center>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet" type="text" id="username">
-                        <label class="mdl-textfield__label" for="sample3">Username</label>
-                    </div>
-                    <br>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet" type="password" id="password">
-                        <label class="mdl-textfield__label" for="sample4">Password</label>
-                    </div>
+                    <center>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet" type="text" id="username">
+                            <label class="mdl-textfield__label font" for="sample3">Username</label>
+                        </div>
+                        <br>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet" type="password" id="password">
+                            <label class="mdl-textfield__label font" for="sample4">Password</label>
+                        </div>
                 </form>
                 <br>
                 <button type="button" id="signin" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" name="button">Submit <i class="material-icons md-light">send</i></button>
-            </center>
-        </main>
-      </div>
+                </center>
+            </main>
+        </div>
     </div>
     <footer class="mdl-mega-footer">
-  <div class="mdl-mega-footer__bottom-section">
-    <div class="mdl-logo">Designed by Chanachai</div>
-  </div>
+        <div class="mdl-mega-footer__bottom-section">
+            <div class="mdl-logo">Designed by Chanachai</div>
+        </div>
 
-</footer>
+    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script type="text/javascript">
-    $("#signin").click(function() {
-        var url = "http://membershipwebapi977290.azurewebsites.net/api/Members/signin?";
-        url += "username=" + $("#username").val();
-        url += "&password=" + $("#password").val();
-        console.log(url);
-        $.get(url, function(data, status) {
-            console.log(data);
-            if (data.Status == true) {
-                console.log("Status = " + data.Status);
-                $("#suc").show();
-            } else {
-                console.log("Status = " + data.Status);
-                $("#err").show();
-            }
+        $("#signin").click(function() {
+            var url = "http://membershipwebapi977290.azurewebsites.net/api/Members/signin?";
+            url += "username=" + $("#username").val();
+            url += "&password=" + $("#password").val();
+            console.log(url);
+            $.get(url, function(data, status) {
+                console.log(data);
+                if (data.Status == true) {
+                    console.log("Status = " + data.Status);
+                    $("#suc").show();
+                } else {
+                    console.log("Status = " + data.Status);
+                    $("#err").show();
+                }
+            });
         });
-    });
     </script>
 </body>
 
