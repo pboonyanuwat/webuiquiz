@@ -10,9 +10,16 @@
             color: white;
         }
 
+        @font-face {
+        	  font-family: OpenSans;
+        	  src: url(OpenSans-Regular.ttf)  format("truetype");  /*-- font.ttf ชี้จากไฟล์ .css --*/
+        }
+        .font{
+        	  font-family: OpenSans,verdana,helvetica, sans-serif;
+        }
+
         .font {
             margin: 5px 0;
-            font-family: 'Open Sans', sans-serif;
             font-weight: 100;
             color: #121212;
         }
@@ -56,7 +63,7 @@
                         </div>
                 </form>
                 <br>
-                <button type="button" id="signin" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" name="button">Sign In <i class="material-icons md-light">send</i></button>
+                <button type="button" id="signin" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored font" name="button">Sign In <i class="material-icons md-light">send</i></button>
                 </center>
             </main>
         </div>
