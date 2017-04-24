@@ -1,6 +1,7 @@
 <html>
 
 <head>
+<title>5730211015</title>
     <!-- Material Design Lite -->
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <!-- Material Design icon font -->
@@ -63,23 +64,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script type="text/javascript">
-        $("#signin").click(function() {
-            var url = "http://membershipwebapi977290.azurewebsites.net/api/Members/signin?";
-            url += "username=" + $("#username").val();
-            url += "&password=" + $("#password").val();
-            console.log(url);
-            $.get(url, function(data, status) {
-                console.log(data);
-                if (data == true) {
-                    //Goto User's info
-
-                } else {
-                    //Goto Sign up
-                    $("#err").show();
-                    //window.location.href = "signup.html";
-                }
-            });
+    $("#signin").click(function() {
+        var url = "http://membershipwebapi977290.azurewebsites.net/api/Members/signin?";
+        url += "username=" + $("#username").val();
+        url += "&password=" + $("#password").val();
+        console.log(url);
+        $.get(url, function(data, status) {
+            console.log(data);
+            if (data.Status == true) {
+                console.log("Status = " + data.Status);
+                $("#suc").show();
+            } else {
+                console.log("Status = " + data.Status);
+                $("#err").show();
+            }
         });
+    });
     </script>
 </body>
 
